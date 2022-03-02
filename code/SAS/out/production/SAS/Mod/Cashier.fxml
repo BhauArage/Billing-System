@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="614.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mod.CashierControllerClass">
+   <children>
+      <TextField fx:id="txt_prod_id" layoutX="104.0" layoutY="60.0" onKeyPressed="#handleproduct" promptText="prod_id" />
+      <TextField fx:id="txt_prod_name" layoutX="104.0" layoutY="104.0" promptText="prod_name" />
+      <TextField fx:id="txt_unit_price" layoutX="104.0" layoutY="145.0" promptText="unit_price" />
+      <TextField fx:id="txt_qty" layoutX="104.0" layoutY="184.0" onAction="#handleorder" promptText="qty" />
+      <Label layoutX="18.0" layoutY="64.0" text=" ProductID :" />
+      <Label layoutX="17.0" layoutY="108.0" text="ProductName :" />
+      <Label layoutX="23.0" layoutY="149.0" text="UnitPrice :" />
+      <Label layoutX="24.0" layoutY="188.0" text="Quantity :" />
+      <TableView fx:id="table_order" layoutX="33.0" layoutY="264.0" prefHeight="200.0" prefWidth="557.0">
+        <columns>
+          <TableColumn fx:id="col_sno" prefWidth="59.0" text="Sno" />
+          <TableColumn fx:id="col_prod_id" prefWidth="91.0" text="ProductID" />
+            <TableColumn fx:id="col_prod_name" prefWidth="131.0" text="ProductName" />
+            <TableColumn fx:id="col_unit_price" prefWidth="73.0" text="UnitPrice" />
+            <TableColumn fx:id="col_qty" prefWidth="73.0" text="Quantity" />
+            <TableColumn fx:id="col_amt" prefWidth="129.0" text="Amount" />
+        </columns>
+      </TableView>
+      <Label layoutX="327.0" layoutY="64.0" text="Order_ID :" />
+      <TextField fx:id="txt_order_id" layoutX="393.0" layoutY="60.0" />
+      <DatePicker fx:id="txt_orderdate" layoutX="381.0" layoutY="104.0" />
+      <Label layoutX="334.0" layoutY="108.0" text="Date :" />
+      <Label fx:id="lbl_total" layoutX="525.0" layoutY="493.0" prefHeight="17.0" prefWidth="31.0" text="0.0" />
+      <Label layoutX="441.0" layoutY="493.0" text="TOTAL :" />
+      <Button fx:id="btn_print" layoutX="516.0" layoutY="222.0" mnemonicParsing="false" onAction="#handleprint" text="PRINT" />
+      <Label layoutX="420.0" layoutY="528.0" text="AMT_PAID :" />
+      <Label layoutX="513.0" layoutY="528.0" />
+      <Label layoutX="435.0" layoutY="563.0" text="BALANCE:" />
+      <Label fx:id="lbl_bal" layoutX="513.0" layoutY="563.0" text="0.0" />
+      <TextField fx:id="txt_amt_paid" layoutX="501.0" layoutY="524.0" onAction="#handlebal" prefHeight="25.0" prefWidth="79.0" />
+      <Button fx:id="btn_paid" layoutX="499.0" layoutY="597.0" mnemonicParsing="false" onAction="#handlenewbill" text="DONE" />
+      <Button layoutX="17.0" layoutY="650.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+   </children>
+</AnchorPane>
